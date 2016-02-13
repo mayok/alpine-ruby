@@ -6,7 +6,6 @@ RUN apk update \
   && curl -O http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p648.tar.gz\
   && tar xvfz ruby-2.0.0-p648.tar.gz\
   && cd ruby-2.0.0-p648\
-  && pwd \
   && curl -O https://gist.githubusercontent.com/mayok/a0f2e6883c2e1d9bb315/raw/04a4b615b1ddbc5297e0e2d59153df008246f300/configure.in.patch \
   -O https://gist.githubusercontent.com/mayok/a0f2e6883c2e1d9bb315/raw/04a4b615b1ddbc5297e0e2d59153df008246f300/io.c.patch \
   -O https://gist.githubusercontent.com/mayok/a0f2e6883c2e1d9bb315/raw/04a4b615b1ddbc5297e0e2d59153df008246f300/isinf.patch \
@@ -21,4 +20,10 @@ RUN apk update \
   && ./configure --enable-shared --disable-rpath --enable-pthread --without-tk \
   && make \
   && rm -rf ext/json \
-  && make install
+  && make install \
+
+# Remove installed rubygems copy
+# rm -r /usr/local/lib/ruby/gems/2.0.0/rdoc
+
+  && rm -r ruby-2.0.0-p648 \
+  && rm ruby-2.0.0-p648.tar.gz
