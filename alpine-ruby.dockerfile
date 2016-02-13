@@ -16,4 +16,5 @@ RUN apk update \
   && patch -u missing/isinf.c < isinf.patch\
   && patch -u missing/isnan.c < isnan.patch \
   && ./configure --enable-shared --disable-rpath --enable-pthread --without-tk \
-  && make
+  && make \
+  && make install
