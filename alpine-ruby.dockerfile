@@ -28,4 +28,6 @@ RUN apk update \
   && rm -r ruby-2.0.0-p648 \
   && rm ruby-2.0.0-p648.tar.gz
 
-RUN gem install bundler
+RUN git clone https://github.com/rubygems/rubygems.git \
+  && cd rubygems \
+  && ruby setup.rb
