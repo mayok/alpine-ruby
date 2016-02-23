@@ -24,5 +24,6 @@ RUN apk update \
 # Remove installed rubygems copy
 # rm -r /usr/local/lib/ruby/gems/2.0.0/rdoc
 
+  && cd .. \
   && rm -r ruby-2.0.0-p648 \
   && rm ruby-2.0.0-p648.tar.gz
