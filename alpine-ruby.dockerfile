@@ -2,7 +2,6 @@ FROM alpine
 RUN apk update \
   && apk add --virtual base build-base curl git autoconf bison bash vim patch\
   && apk add --virtual ruby-deps libffi zlib zlib-dev openssl\
-  && echo 'PATH=$PATH:$HOME/.rbenv/bin' > ~/.bash_profile\
   && curl -O http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p648.tar.gz\
   && tar xvfz ruby-2.0.0-p648.tar.gz\
   && cd ruby-2.0.0-p648\
