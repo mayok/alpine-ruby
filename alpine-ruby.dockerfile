@@ -27,3 +27,5 @@ RUN apk update \
   && cd .. \
   && rm -r ruby-2.0.0-p648 \
   && rm ruby-2.0.0-p648.tar.gz
+
+RUN gem install bundler
