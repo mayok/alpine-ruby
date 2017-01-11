@@ -1,0 +1,17 @@
+diff --git a/missing/isnan.c.orig b/missing/isnan.c
+index 5846947..582eb0f 100644
+--- a/missing/isnan.c.orig
++++ b/missing/isnan.c
+@@ -4,6 +4,7 @@
+ 
+ static int double_ne(double n1, double n2);
+ 
++#ifndef isnan
+ int
+ isnan(double n)
+ {
+@@ -15,3 +16,4 @@ double_ne(double n1, double n2)
+ {
+     return n1 != n2;
+ }
++#endif

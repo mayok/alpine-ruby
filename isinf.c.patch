@@ -1,0 +1,17 @@
+diff --git a/missing/isinf.c.orig b/missing/isinf.c
+index 55187ad..2b4aaf5 100644
+--- a/missing/isinf.c.orig
++++ b/missing/isinf.c
+@@ -5,6 +5,7 @@
+ #define _IEEE 1
+ #include <nan.h>
+ 
++#ifndef isinf
+ int
+ isinf(double n)
+ {
+@@ -67,3 +68,4 @@ isinf(double n)
+ }
+ #endif
+ #endif
++#endif
